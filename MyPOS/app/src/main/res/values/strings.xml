@@ -11,10 +11,20 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
 
+    <!--操作項目和圖示要能互相對應(數量一定要一樣)-->
+    <!--店員操作項目-->
     <string-array name="operation_set">
         <item>結帳</item>
         <item>商品</item>
         <item>付款</item>
         <item>管理</item>
+    </string-array>
+
+    <!--店員操作圖示-->
+    <string-array name="operation_image_set">
+        <item>@drawable/ic_operation1</item>
+        <item>@drawable/ic_operation2</item>
+        <item>@drawable/ic_operation3</item>
+        <item>@drawable/ic_operation4</item>
     </string-array>
 </resources>

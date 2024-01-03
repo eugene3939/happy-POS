@@ -4,13 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ListView
+import android.widget.GridView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.mypos.R
 import com.example.mypos.databinding.FragmentHomeBinding
+import com.example.mypos.ui.Operation
+import com.example.mypos.ui.OperationAdapter
 
 class HomeFragment : Fragment() {
 
@@ -37,13 +38,27 @@ class HomeFragment : Fragment() {
         }
 
         // 修改這裡，使用 binding 對象找到 ListView
-        val listView: ListView = binding.listOperationSet
-        // 從字符串數組獲取操作列表
-        val operationArray = resources.getStringArray(R.array.operation_set)
-        // 使用 ArrayAdapter 來設置 ListView 的數據
-        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, operationArray)
+        val gridView: GridView = binding.listOperationSet
+
+        //操作內容物件: 包含名稱和圖片
+        val item = ArrayList<Operation>()
+        // 操作名稱
+        val operationNameArray = resources.getStringArray(R.array.operation_set)
+        //操作項目圖片
+        val operationImgArray = resources.obtainTypedArray(R.array.operation_image_set)
+
+        // 將操作名稱和圖片加入 operation_item
+        for (i in operationNameArray.indices) {
+            item.add(Operation(operationImgArray.getResourceId(i,0),operationNameArray[i]))
+        }
+
+        operationImgArray.recycle()
+        gridView.numColumns = 2
+        gridView.adapter = OperationAdapter(R.layout.operator_vertical,item)
+
+        // 單一資料顯示寫法
+//        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, operationNameArray)
         // 設置 ListView 的 adapter
-        listView.adapter = adapter
         return root
 
     }
