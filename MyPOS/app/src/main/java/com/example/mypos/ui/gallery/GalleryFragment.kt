@@ -4,10 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.GridView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.mypos.R
 import com.example.mypos.databinding.FragmentGalleryBinding
+import com.example.mypos.ui.Operation
+import com.example.mypos.ui.OperationAdapter
 
 class GalleryFragment : Fragment() {
 
@@ -30,8 +35,17 @@ class GalleryFragment : Fragment() {
 
         val textView: TextView = binding.textGallery
         galleryViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+            textView.text = "營業選項"
         }
+
+        // custom list會顯示之後可以新增的選項
+        val gridView: GridView = binding.listCustomItems
+        val customArray = resources.getStringArray(R.array.customized_set)
+
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1,customArray)
+        gridView.numColumns = 2
+        gridView.adapter = adapter
+
         return root
     }
 

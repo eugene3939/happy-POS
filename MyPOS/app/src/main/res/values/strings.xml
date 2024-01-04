@@ -7,16 +7,16 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_home">首頁</string>
+    <string name="menu_gallery">營業中</string>
+    <string name="menu_slideshow">清帳作業</string>1
 
-    <!--操作項目和圖示要能互相對應(數量一定要一樣)-->
+    <!--主頁，操作項目和圖示要能互相對應(數量一定要一樣)-->
     <!--店員操作項目-->
     <string-array name="operation_set">
         <item>結帳</item>
         <item>商品</item>
-        <item>付款</item>
+        <item>付款</item>1
         <item>管理</item>
     </string-array>
 
@@ -26,5 +26,21 @@
         <item>@drawable/ic_operation2</item>
         <item>@drawable/ic_operation3</item>
         <item>@drawable/ic_operation4</item>
+    </string-array>
+
+    <!--客製化操作選項-->
+    <string-array name="customized_set">
+        <item>統編</item>
+        <item>員工編號</item>
+        <item>交易保留</item>
+        <item>暫停交易</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>取消交易</item>
+        <item>取消付款</item>
+        <item>信用卡</item>
+        <item>現金1</item>
+        <item>取消付款</item>
     </string-array>
 </resources>
