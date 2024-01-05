@@ -36,14 +36,14 @@ class GalleryFragment : Fragment() {
         val textView: TextView = binding.textGallery
         galleryViewModel.text.observe(viewLifecycleOwner) {
             textView.text = "營業選項"
-        }
+        }1
 
         // custom list會顯示之後可以新增的選項
         val gridView: GridView = binding.listCustomItems
         val customArray = resources.getStringArray(R.array.customized_set)
 
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1,customArray)
-        gridView.numColumns = 2
+        gridView.numColumns = 3
         gridView.adapter = adapter
 
         return root

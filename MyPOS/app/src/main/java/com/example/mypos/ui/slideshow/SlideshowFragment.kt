@@ -167,7 +167,7 @@ class SlideshowFragment : Fragment() {
 
         c.moveToFirst()
         items.clear()
-        Toast.makeText(requireContext(), "共有${c.count}筆資料", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(requireContext(), "共有${c.count}筆資料", Toast.LENGTH_SHORT).show()
         for (i in 0 until c.count) {
             items.add("品名:${c.getString(0)}\t\t\t\t價格:${c.getString(1)}")
             c.moveToNext()

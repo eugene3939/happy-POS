@@ -53,7 +53,7 @@ class HomeFragment : Fragment() {
         }
 
         operationImgArray.recycle()
-        gridView.numColumns = 2
+        gridView.numColumns = 3
         gridView.adapter = OperationAdapter(R.layout.operator_vertical,item)
 
         // 單一資料顯示寫法

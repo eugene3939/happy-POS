@@ -14,10 +14,12 @@
     <!--主頁，操作項目和圖示要能互相對應(數量一定要一樣)-->
     <!--店員操作項目-->
     <string-array name="operation_set">
-        <item>結帳</item>
+        <item>清帳</item>
         <item>商品</item>
-        <item>付款</item>1
+        <item>付款</item>
         <item>管理</item>
+        <item>折扣</item>
+        <item>其他功能</item>
     </string-array>
 
     <!--店員操作圖示-->
@@ -26,6 +28,8 @@
         <item>@drawable/ic_operation2</item>
         <item>@drawable/ic_operation3</item>
         <item>@drawable/ic_operation4</item>
+        <item>@drawable/ic_operation5</item>
+        <item>@drawable/ic_hello</item>
     </string-array>
 
     <!--客製化操作選項-->
@@ -42,5 +46,20 @@
         <item>信用卡</item>
         <item>現金1</item>
         <item>取消付款</item>
+    </string-array>
+
+    <string-array name="customized_set2">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>刷卡</item>
+        <item>現金</item>
+        <item>取消</item>
     </string-array>
 </resources>
