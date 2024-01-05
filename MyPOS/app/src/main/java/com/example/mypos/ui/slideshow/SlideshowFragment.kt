@@ -1,5 +1,6 @@
 package com.example.mypos.ui.slideshow
 
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -58,6 +59,22 @@ class SlideshowFragment : Fragment() {
         listView.adapter = adapter
 
         performQuery(edItem)
+
+        //點擊Listview項目
+        // 點擊ListView項目
+        listView.setOnItemClickListener { parent, view, position, id ->
+            // 獲取被點擊的項目資訊
+            val clickedItem = parent.getItemAtPosition(position).toString()
+
+            // 將品名和價格分割並設置到對應的EditText
+            val itemParts = clickedItem.split("\t\t\t\t")
+            val itemName = itemParts[0].substring(3) // 截取品名部分
+            val itemPrice = itemParts[1].substring(3) // 截取價格部分
+
+            // 設置到EditText
+            edItem.setText(itemName)
+            edPrice.setText(itemPrice)
+        }
 
         //查詢
         btnQuery.setOnClickListener {

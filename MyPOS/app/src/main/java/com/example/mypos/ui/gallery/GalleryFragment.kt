@@ -36,7 +36,7 @@ class GalleryFragment : Fragment() {
         val textView: TextView = binding.textGallery
         galleryViewModel.text.observe(viewLifecycleOwner) {
             textView.text = "營業選項"
-        }1
+        }
 
         // custom list會顯示之後可以新增的選項
         val gridView: GridView = binding.listCustomItems
